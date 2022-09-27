@@ -1,0 +1,12 @@
+{% extends 'basse.html' %}
+
+{% block content%}
+<div class="bg-info bg-gradient mx-5 my-4 border border-secondary rounded px-5 py-4">
+    <form method="post" action="">
+        {% csrf_token%}
+        {{form.as_p}}
+        Expiry date in mm/dd/yyyy <br>
+        <input type="submit" value="submit">
+    </form>
+</div>
+{% endblock%}

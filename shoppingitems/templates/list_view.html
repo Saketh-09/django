@@ -1,0 +1,21 @@
+{% extends 'basse.html' %}
+
+{% block content%}
+<ol class="list-group list-group-numbered">
+{% for d in dataset %}
+<div class="main">
+    <li class="bg-info bg-gradient list-group-item d-flex justify-content-between align-items-start mx-5 my-1">
+        <div class="ms-2 me-auto ">
+        <div class="fw-bold">Item name: <a href="{{ d.id }}">{{ d.name }}</a><br/></div>
+        Item price: {{ d.price }}<br/>
+        Item discount: {{ d.discount }}<br/>
+        </div>
+        <span class="badge bg-light rounded-pill"><a href="{{ d.id }}/update">update</a><br></span>
+        <span class="badge bg-light rounded-pill"><a href="{{ d.id }}/delete">delete</a><br></span>
+        <span class="badge bg-light rounded-pill"><a href="{% url 'create_view' %}api/restapi/{{ d.id }}">retrieve/update/delete restapi</a><br></span>
+    </li>
+    
+</div>
+</ol>
+{% endfor %}
+{% endblock %}

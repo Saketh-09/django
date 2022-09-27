@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} SignUp Page{% endblock %}
+
+{% block content %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+    <div class="bg-info bg-gradient mx-5 my-4 border border-secondary rounded px-5 py-4">
+        <form action="" method="POST">
+            {{ form.management_data }}
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock %}

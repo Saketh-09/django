@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %} SignUp Details {% endblock %}
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{formset.management_data}}
+        
+        {{formset.as_p}}
+        <input type="submit" value="submit">
+    </form>
+{% endblock %}

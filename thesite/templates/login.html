@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<p>Custom authentication model is being used</p>
+    <div class="bg-info bg-gradient form-group mx-5 my-4 border border-secondary rounded px-5 py-4">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Login">
+        </form>
+        <span class="mx-2">Not a member? <a href="{% url 'signup1' %}">SignUP</a></span>
+    </div>
+{% endblock %}

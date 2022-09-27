@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Home {% endblock %}
+
+{% block content %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<h1 class="mx-5">Ola! {{name}}</h1>
+<hr>
+<h3 class="mx-5">Welcome to the Home page!</h3>
+<div class="mx-5">Below mentioned your user details</div> <br>
+<div class="bg-info bg-gradient mx-5 my-4 border border-secondary rounded px-5 py-4">
+Username : {{name}} <br>
+EmailID : {{email}}
+</div>
+{% endblock %}

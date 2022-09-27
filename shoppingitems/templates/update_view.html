@@ -1,0 +1,20 @@
+{% extends 'basse.html' %}
+
+{% block content %}
+<div class="main">
+
+<div class="bg-info bg-gradient mx-5 my-4 border border-secondary rounded px-5 py-4">
+	<!-- Create a Form -->
+	<form method="POST">
+		<!-- Security token by Django -->
+		{% csrf_token %}
+
+		<!-- form as paragraph -->
+		{{ form.as_p }}
+
+		<input type="submit" value="Update">
+	</form>
+</div>
+</div>
+ 
+{% endblock %}
